@@ -24,7 +24,7 @@ public class SubscribeConsumer{
 
     @PostConstruct
     public void startConsumer() throws Exception {
-        DefaultMQPushConsumer defaultMQPushConsumer = new DefaultMQPushConsumer("test");
+        DefaultMQPushConsumer defaultMQPushConsumer = new DefaultMQPushConsumer("subscribe");
         defaultMQPushConsumer.setNamesrvAddr("192.168.2.106:9876");
         defaultMQPushConsumer.subscribe("subscribe", "*");
         defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently() {

@@ -1,4 +1,4 @@
-package com.example.applicationa.mq;
+package com.example.applicationb.mq;
 
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

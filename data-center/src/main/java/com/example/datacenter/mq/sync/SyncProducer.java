@@ -44,7 +44,7 @@ public class SyncProducer {
     }
 
     public void sendMessage(Data data, String tag) {
-        System.out.println("send message"+data);
+        System.out.println("send message"+data+":"+tag);
         Message message = new Message("sync", tag, data.toString().getBytes());
         try {
             SendResult sendResult = getMqProducer().send(message);

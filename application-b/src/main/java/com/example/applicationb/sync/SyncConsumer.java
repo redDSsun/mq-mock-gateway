@@ -1,4 +1,4 @@
-package com.example.applicationa.sync;
+package com.example.applicationb.sync;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
@@ -8,19 +8,16 @@ import org.apache.rocketmq.common.message.MessageExt;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class SyncConsumer {
 
     @PostConstruct
     public void startConsumer() throws Exception {
-        DefaultMQPushConsumer defaultMQPushConsumer = new DefaultMQPushConsumer("application-a");
+        DefaultMQPushConsumer defaultMQPushConsumer = new DefaultMQPushConsumer("application-b");
         defaultMQPushConsumer.setNamesrvAddr("192.168.2.106:9876");
-        defaultMQPushConsumer.subscribe("sync", "application-a");
+        defaultMQPushConsumer.subscribe("sync", "application-b");
         System.out.println("====");
         defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
