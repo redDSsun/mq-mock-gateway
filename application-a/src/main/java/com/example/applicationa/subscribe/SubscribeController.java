@@ -27,6 +27,7 @@ public class SubscribeController {
                 SendResult sendResult = defaultMQProducer.send(message);
                 System.out.println("subscribe "+subscribe+" successful");
             }catch (Exception e){
+                System.out.println(e);
                 System.out.println("subscribe "+subscribe+" failed");
             }
 

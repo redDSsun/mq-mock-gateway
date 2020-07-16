@@ -11,6 +11,7 @@ import java.util.Set;
 
 
 @Service
+
 public class DataService {
 
     Observer observer;
@@ -41,6 +42,12 @@ public class DataService {
         return ORIGINAL_DATA;
     }
 
+    /**
+     *
+     * @param id
+     * @param num
+     * @return
+     */
     public Map<Long, Data> modifyNum(Long id, int num){
         Data data = ORIGINAL_DATA.get(id);
         data.setNum(num);
